@@ -1,7 +1,9 @@
 export const createTestBody = (input: string, output: string, name: string) => {
+  if (!input || !output) return;
+
   const inputArray = input.split('|');
   const outputArray = output.split(',');
-  if (inputArray.length !== outputArray.length) return;
+
   let testBody = `describe("${name}", function () {
       it("should pass custom user tests", function () {\n`;
 
